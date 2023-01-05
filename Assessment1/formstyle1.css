@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgba(0, 0, 0, 0.817);
+    color: wheat;
+}
+a{
+    color: wheat;
+}
+h1,h3{
+    text-align: center;
+    margin: 50px;
+}
+table{
+    font-size:20px;
+    border: 2px solid white; 
+    border-collapse: collapse; 
+    margin: 50px; 
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+td{
+    border: 3px solid white; 
+    border-collapse: collapse; 
+    padding:15px;
+}

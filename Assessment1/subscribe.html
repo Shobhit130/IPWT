@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe</title>
+    <link rel="stylesheet" href="subscribeStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/1a873ec23a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h3 class="heading">Subscribe to my Blog!</h3>
+    <div class = "container">
+        <h3>Please fill in the form to subscribe to my blog</h3>
+        <form autocomplete="on">
+            <div class = "box">
+                <label class = "fl formlabels">Name:</label>
+                <div class="new iconBox">
+                    <i class="fa fa-user"></i>
+                </div>
+                <div class = "fr">
+                    <input type="text" class = "textBox" placeholder="Name" autofocus = "on" required>
+                </div>
+                <div class = "clr"></div>
+            </div>
+            <div class="box">
+                <label class="fl formlabels"> Date of Birth: </label>
+                <div class="fl iconBox">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </div>
+                <div class="fr">
+                    <input type="date" required class="textBox">
+                </div>
+                <div class = "clr"></div>
+            </div>
+            <div class="box">
+                <label class="fl formlabels">Phone No.:</label>
+                <div class = "fl iconBox">
+                    <i class = "fa fa-phone-square"></i>
+                </div>
+                <div class="fr">
+                    <input type="text" required maxlength="10" placeholder="Phone No." class="textBox">
+                </div>
+                <div class = "clr"></div>
+            </div>
+            <div class="box">
+                <label class="fl formlabels"> Email ID: </label>
+                <div class="fl iconBox">
+                    <i class="fa fa-envelope"></i>
+                </div>
+                <div class="fr">
+                    <input type="email" required placeholder="Email Id" class="textBox">
+                </div>
+                <div class = "clr"></div>
+            </div>
+            <div class="box">
+                <label class="fl formlabels"> Password: </label>
+                <div class="fl iconBox">
+                    <i class="fa fa-key"></i>
+                </div>
+                <div class="fr">
+                    <input type="Password" required placeholder="Password" class="textBox">
+                </div>
+                <div class = "clr"></div>
+            </div>
+            <div class = "box">
+                <label class = "fl formlabels">Message:</label>
+                <div class = "fr">
+                    <textarea cols="29" required placeholder="Your Message" class = "textArea" rows="5"></textarea>
+                </div>
+                <div class="clr"></div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="radioBox">
+                <label class="fl formlabels"> Gender: </label>
+                <input type="radio" name="Gender" value="Male" required> Male &nbsp; &nbsp; &nbsp; &nbsp;
+                <input type="radio" name="Gender" value="Female" required> Female
+            </div>
+            <div class="box">
+                <label class = "fl formlabels">Subscription:</label>
+                <div class="fl iconBox">
+                    <i class="fa-regular fa-clock"></i>
+                </div>
+                <div class = "fr">
+                    <select class="dropdown">
+                        <option value = "--Choose a time--">--Choose a Time--</option>
+                        <option value = "3 Months">3 Months</option>
+                        <option value = "6 Months">6 Months</option>
+                        <option value = "12 Months">12 Months</option>
+                    </select>
+                </div>
+                <div class = "clr"></div>
+            </div>  
+            <div class="termsBox">
+                <input type="checkbox"> &nbsp; Renew my subscription automatically
+            </div>
+            <div class="termsBox">
+                <input type="checkbox" required> &nbsp; I accept the terms and conditions
+            </div>
+            <div class = "buttons">
+                <div class = "box button1">
+                    <input type = "reset" class="reset" value="RESET">
+                </div>
+                <div class="box button2">
+                    <input type="submit" class="submit" value="SUBSCRIBE">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

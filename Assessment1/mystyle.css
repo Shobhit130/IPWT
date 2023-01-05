@@ -1,0 +1,119 @@
+*{
+    box-sizing:border-box;
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    font-family: 'Titan One', cursive;
+    font-family: 'Work Sans', sans-serif;
+    background-color: black;
+    color: white;
+}
+.container{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.name{
+    text-align: center;
+    padding: 10px;
+    color: teal;
+    font-size: x-large;
+}
+.intro{
+    text-align: justify;
+    padding: 10px;
+}
+.courses{
+    padding: 10px;
+}
+.shows{
+    padding: 10px;
+}
+.courses h3, .shows h3{
+    padding-bottom: 10px;
+}
+.courses ul, .shows ol{
+    padding-left: 10px;
+}
+.courses ul li, .shows ol li{
+    padding-bottom: 6px;
+}
+.shows a{
+    text-decoration: none;
+    display: inline-block;
+    padding: 20px 0px 10px 10px;
+    font-size: large;
+    color: white;
+}
+.shows a:hover{
+    color: blue;
+}
+div.image img{
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+}
+.image{
+    padding: 10px;
+}
+li{
+    list-style-position: inside;
+    list-style-type: none;
+    display: inline-block;
+}
+.covid{
+    padding: 10px;
+}
+.covid p{
+    text-align: justify;
+    padding: 20px;
+}
+.covid h3{
+    padding-bottom: 10px;
+}
+.covid ol{
+    padding-left: 10px;
+}
+.subscribe{
+    padding: 10px;
+}
+.subscribe a{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    font-size: large;
+    display: inline-block;
+}
+.subscribe a:hover{
+    color: blue;
+}
+.contact{
+    padding: 10px;
+}
+.contact a{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    font-size: large;
+    display: inline-block;
+}
+.contact a:hover{
+    color: blue;
+}
+.line{
+    padding: 10px;
+}
+hr{
+    height: 2px;
+    background-color: white;
+    border: none;
+}
+h3{
+    color: brown;
+}
+.covid li,.covid i{
+    color: crimson;
+}
