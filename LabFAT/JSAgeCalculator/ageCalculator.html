@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Age Calculator</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        background-color: brown;
+    }
+    .container{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        border-radius: 5px;
+        padding: 10px;
+        background-color: darkgoldenrod;
+        width: 400px;   
+    }
+
+    .icon{
+        float: left;
+        margin: 5px;
+        color: white;
+        position: relative;
+        left: 30px;
+    }
+    .heading{
+        float: left;
+        color: white;
+        position: relative;
+        left: 50px;
+    }
+    .title:after{
+        display: block;
+        content: "";
+        clear: both;
+    }
+    .title{
+        padding: 10px;
+        font-size: x-large;
+        background-color: darkgoldenrod;
+    }
+    .icon,.title,.container,.heading,.input{
+        background-color: darkgoldenrod;
+    }
+    .input{
+        padding: 10px;
+    }
+    i{
+        font-size: xx-large;
+    }
+    input[type="date"],button{
+        margin: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+    }
+    input[type="date"]{
+        width: 52%;
+    }
+    button{
+        background-color: brown;
+        color: white;
+        font-weight: bolder;
+        cursor: pointer;
+    }
+    h1,h3{
+        text-align: center;
+        color: white;
+    }
+    .empty{
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="title">
+            <div class="icon">
+                <i class="fas fa-calculator"></i>
+            </div>
+            <div class="heading">
+                <h2>Age Calculator</h2>
+            </div>
+        </div>
+        <div class="input">
+            <input type = "date" autofocus id = "dob">
+            <button id = "calc" onclick="calculate()">Calculate</button>
+        </div>
+        <!-- <div class="empty"> -->
+            <!-- <span id = "message" style="color:red;"> </span> <br><br>     -->
+        <!-- </div> -->
+        <h3 id = "born"></h3>
+        <h1 id="result"></h1>   
+    </div>
+    <script>
+        function calculate(){
+            var userinput = document.getElementById("dob").value;
+            var dob = new Date(userinput);
+            if(userinput == null || userinput == ''){
+                document.getElementById("message").innerHTML = "**Choose a date please!";    
+                return false;   
+            }else{
+
+                var byear = dob.getFullYear();
+                var bmonth = dob.getMonth();
+                var bdate = dob.getDate();
+                // alert(byear);
+                var today = new Date();
+                var currentYear = today.getFullYear();  
+                var currentMonth = today.getMonth();  
+                var currentDate = today.getDate();  
+
+                var yearAge = currentYear - byear;
+                var monthAge;
+                var dateAge;
+                if(currentMonth >= bmonth){
+                    monthAge = currentMonth - bmonth;
+                }else{
+                    monthAge = 12 + currentMonth - bmonth;
+                    yearAge--;
+                }
+                if(currentDate >= bdate){
+                    dateAge = currentDate - bdate;
+                }else{
+                    monthAge--;
+                    dateAge = 31 + currentDate - bdate;
+                    if(monthAge<0){
+                        monthAge = 11;
+                        yearAge--;
+                    }
+                }
+                var ageString;
+                if(yearAge > 0 && monthAge > 0 && dateAge > 0){
+                    ageString = "You are " + yearAge + " years, " + monthAge + " months, and " + dateAge + " days old.";
+                }
+                document.getElementById("born").innerHTML = "You were born on " + dob.toDateString();
+                document.getElementById("result").innerHTML = ageString;   
+            }
+        }
+    </script>
+</body>
+</html>

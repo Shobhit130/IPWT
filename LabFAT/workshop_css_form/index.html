@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/1a873ec23a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <span>Workshop Registration</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span>More Actions</span>
+            <i class="fa-solid fa-caret-down"></i>
+        </div>
+        <div class="form">
+            <form action="#" oninput="total.value = price.valueAsNumber * quantity.valueAsNumber" >
+                <p class="top"><u>Register now while seats are available!</u></p>
+                <div class="left">
+                    <label for = "first">First Name <span>*</span> </label>
+                    <input type="text" name="first" pattern="[A-Z]{3}" required autofocus><br>
+                    <label for = "last">Last Name <span>*</span> </label>
+                    <input type="text" name="last"><br>
+                    <label for = "company">Company/Institution <span>*</span> </label>
+                    <input type="text" name="company"><br>
+                    <label for = "add" class="add">Address <span>*</span> </label>
+                    <textarea name="add" cols="27" rows="7"></textarea><br>
+                    <label for = "city">City <span>*</span> </label>
+                    <input type="text" name="city"><br>
+                    <label for = "state">State/Province/Region</label>
+                    <select name="state">
+                        <option value="">--Select a State--</option>
+                        <option value="UP">UP</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="MP">MP</option>
+                    </select><br>
+                    <label for = "country">Country</label>
+                    <select name="country">
+                        <option value="">--Select a Country--</option>
+                        <option value="India" selected>India</option>
+                        <option value="China">China</option>
+                        <option value="US">US</option>
+                    </select><br>
+                    <label for = "email">Email <span>*</span> </label>
+                    <input type="email" name="email"><br>
+                    <label for = "phone">Phone Number <span>*</span> </label>
+                    <input type="tel" name="phone"><br>
+                </div>
+                <div class="right">
+                    <p class="lunch"><u>Lunch</u></p>
+                    <label for = "meal" class="meal">Meal Preference</label>
+                    <select name="meal">
+                        <option value="">--Select a Meal--</option>
+                        <option value="north">North Indian</option>
+                        <option value="south">South Indian</option>
+                        <option value="italian">Italian</option>
+                    </select><br>
+                    <p><u>Payment Details</u></p>
+                    <label for = "payment">Payment Mode</label>
+                    <input type="checkbox" name="cash" checked><span class="payment">Cash</span><br>
+                    <div class="rest">
+                        <input type="checkbox" name="Cheque"><span class="payment">Cheque</span><br>
+                        <input type="checkbox" name="Demand Draft"><span class="payment">Demand Draft</span><br>
+                    </div>
+                    <label for = "dd">DD/Cheque No.</label>
+                    <input type="text" name="dd"><br>
+                    <label for = "bank">Drawn on(Bank name)</label>
+                    <input type="text" name="bank"><br>
+                    <label for = "pay">Payable at</label>
+                    <input type="text" name="pay"><br>
+                    <label for = "price">Price</label>
+                    <input type="number" name="price"><br>
+                    <label for = "quantity">Quantity</label>
+                    <input type="number" name="quantity" min="5" max="10"><br>
+                    <label for = "total">Total</label>
+                    <output name="total"></output>
+                    
+                </div>
+                <div class="btns">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<!-- min,max,step,minlength,maxlength,autofocus,size,disabled,required,pattern -->
+<!-- 
+<map name="giftmap">
+    <area target="_blank" href="https://www.gifts.com/" coords="151,122,513,402" shape="rect">
+</map> -->

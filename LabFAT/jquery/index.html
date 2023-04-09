@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <form>
+        <label for = "id">Student ID: </label>
+        <input type="text" name="id" id="id"><br>
+        <p id = "iderr"></p>
+        <label for = "name">Student Name: </label>
+        <input type="text" name="name" id="name"><br>
+        <p id = "nameerr"></p>
+        <label for = "dept">Student Department: </label>
+        <input type="text" name="dept" id="dept"><br>
+        <p id = "depterr"></p>
+        <label for = "perc">Student Percentage: </label>
+        <input type="text" name="perc" id="perc"><br>
+        <p id = "percerr"></p>
+        <label for = "grade">Student Grade: </label>
+        <input type="text" name="grade" id="grade"><br>
+        <p id = "gradeerr"></p>
+        <button type="button" id = "addbtn">Add</button>
+        <button type="button" id = "hidebtn">Hide</button>
+    </form>
+    <div>
+        <table id = "res">
+
+        </table>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $("p").hide();
+            var flagname = 0;
+            var flagid = 0;
+            var flagdept = 0;
+            var flagperc = 0;
+            var flaggrade = 0;
+            $("#addbtn").click(function(){
+                if(validateid()){
+                    flagid = 1;
+                    $("#iderr").show();
+                    $("#iderr").text("Please enter proper ID!");
+                }else{
+                    $("#iderr").hide();
+                    flagid = 0;
+                }
+                if(validatename()){
+                    flagname = 1;
+                    $("#nameerr").show();
+                    $("#nameerr").text("Please enter proper Name!");
+                }else{
+                    $("#nameerr").hide();
+                    flagname = 0;
+                }
+                if(validatedept()){
+                    flagdept = 1;
+                    $("#depterr").show();
+                    $("#depterr").text("Please enter proper Department!");
+                }else{
+                    $("#depterr").hide();
+                    flagdept = 0;
+                }
+                if(validateperc()){
+                    flagperc = 1;
+                    $("#percerr").show();
+                    $("#percerr").text("Please enter proper percentage!");
+                }else{
+                    $("#percerr").hide();
+                    flagperc = 0;
+                }
+                if(validategrade()){
+                    flaggrade = 1;
+                    $("#gradeerr").show();
+                    $("#gradeerr").text("Please enter proper grade!");
+                }else{
+                    $("#gradeerr").hide();
+                    flaggrade = 0;
+                }
+                if(flagname == 0 && flagid == 0 && flaggrade == 0 && flagperc == 0 && flagdept == 0){
+                    addTable();
+                }
+            });
+            $("#hidebtn").click(function(){
+                $("#res").hide();
+            });
+        });
+        function validateid(){
+            var idf = /^[A-Z0-9]{9}$/;
+            if($("#id").val() == "" || !idf.test($("#id").val())){
+                return true;
+            }
+        }
+        function validatename(){
+            var namef = /^[A-Za-z]*$/;
+            if($("#name").val() == "" || !namef.test($("#name").val())){
+                return true;
+            }
+        }
+        function validatedept(){
+            var deptf = /^[A-Z]{2,3}$/;
+            if($("#dept").val() == "" || !deptf.test($("#dept").val())){
+                return true;
+            }
+        }
+        function validateperc(){
+            var percf = /^[0-9]{2}$/;
+            if($("#perc").val() == "" || !percf.test($("#perc").val())){
+                return true;
+            }
+        }
+        function validategrade(){
+            var gradef = /^[A-Z]{1}$/;
+            if($("#grade").val() == "" || !gradef.test($("#grade").val())){
+                return true;
+            }
+        }
+        function addTable(){
+            if($("#res tr").length == 0){
+                $("#res").append(
+                    "<tr>" + 
+                    "<th>STU_ID</th>" + 
+                    "<th>S_NAME</th>" + 
+                    "<th>DEPT</th>" +
+                    "<th>PERCENTAGE</th>"+
+                    "<th>GRADE</th>" + "</tr>" + 
+                    "<tr>" + 
+                    "<td>" + $("#id").val() + "</td>" + 
+                    "<td>" + $("#name").val() + "</td>" + 
+                    "<td>" + $("#dept").val() + "</td>"+
+                    "<td>" + $("#perc").val() + "</td>"+
+                    "<td>" + $("#grade").val() + "</td>"+
+                    "</tr>"
+                );
+            }else{
+                $("#res").append(
+                    "<tr>" + 
+                    "<td>" + $("#id").val() + "</td>" + 
+                    "<td>" + $("#name").val() + "</td>" + 
+                    "<td>" + $("#dept").val() + "</td>"+
+                    "<td>" + $("#perc").val() + "</td>"+
+                    "<td>" + $("#grade").val() + "</td>"+
+                    "</tr>"
+                );
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+<!-- $("p,h1,h2").addClass("blue important") -->
+<!-- $("p,h1,h2").css("background-color","yellow") -->
+<!-- $("p,h1,h2").css({"background-color":"yellow","color":"blue"}) -->

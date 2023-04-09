@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="mystyle2.css" />
+    <script src="myscript2.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <form name="formvalid" onsubmit="return validate();">
+        <label for="name">Full Name: </label>
+        <input type="text" name="name" id="name" />
+        <br />
+        <label for="email">Email: </label>
+        <input type="email" name="email" id="email" />
+        <br />
+        <label for="pass">Password: </label>
+        <input type="password" name="pass" id="pass" />
+        <br />
+        <label for="repass">Confirm Password: </label>
+        <input type="password" name="repass" id="repass" />
+        <br />
+        <label for="gender">Gender:</label>
+        <input type="radio" name="gender" id="gender" value="male" />
+        Male &nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="gender" id="gender" value="female" />
+        Female
+        <br />
+        <label for="city">City:</label>
+        <select name="city" id="city">
+          <option value="-1">--Select a city--</option>
+          <option value="new delhi">New Delhi</option>
+          <option value="mumbai">Mumbai</option>
+          <option value="nagpur">Nagpur</option>
+        </select>
+        <br />
+        <label for="phone">Phone Number: </label>
+        <input type="tel" name="phone" id="phone" class="phone" />
+        <br />
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" />
+        <br />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>

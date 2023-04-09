@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <form action="#" method="post">
+        <label for = "name">Name: </label>
+        <input type="text" name = "name"><br>
+        <label for = "country">Country: </label>
+        <select name = "country" onchange="fun(this.value)" id = "country">
+            <option value="">--Select a Country--</option>
+        </select>
+        <br>
+        <label for = "state">State: </label>
+        <select name = "state" id="state">
+            <option value="">--Select a State--</option>
+        </select>
+        <br>
+        <input type="submit" value = "Submit">
+    </form>
+
+    <script>
+        $(document).ready(function(){
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    $("#country").append(this.responseText);
+                }
+            };
+            xhttp.open("GET","getCountry.php",true);
+            xhttp.send();
+        });
+        function fun(str){
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    document.getElementById("state").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET","getState.php?q="+str,true);
+            xhttp.send();
+        }
+    </script>
+</body>
+</html>

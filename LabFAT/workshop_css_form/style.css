@@ -1,0 +1,104 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+}
+.container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border: 3px solid seagreen;
+    border-radius: 8px 8px 0 0;
+}
+.head{
+    background-color: seagreen;
+    color: white;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    font-weight: bold;
+}
+.form{
+    padding: 10px;
+    width: 1000px;
+}
+.left,.right{
+    float: left;
+    width: 50%;
+    padding-right: 10px;
+}
+label{
+    display: inline-block;
+    width: 50%;
+    padding: 5px;
+    font-size: small;
+    font-weight: bold;
+}
+input[type = "text"],
+input[type = "tel"],
+input[type = "email"],
+select,textarea{
+    width: 48%;
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.form:after{
+    display: block;
+    content: "";
+    clear: both;
+}
+.btns{
+    position: absolute;
+    bottom: 0;
+    background-color: #eee;
+    width: 100%;
+    text-align: center;
+    right: 0px;
+    padding: 20px;
+}
+.left{
+    margin-bottom: 100px;
+}
+.left span{
+    color: red;
+}
+.add{
+    position: relative;
+    bottom: 110px;
+}
+.top{
+    margin-bottom: 30px;
+}
+.lunch{
+    position: relative;
+    bottom: 30px;
+}
+.right{
+    padding-left: 20px;
+}
+.payment{
+    font-size: small;
+    margin: 5px;
+}
+.rest{
+    position: relative;
+    left: 236px;
+    margin-bottom: 20px;
+}
+input[type="submit"],
+input[type="reset"]{
+    background-color: crimson;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+input[type="submit"]:hover,
+input[type="reset"]:hover{
+    cursor: pointer;
+    background-color: rgb(172, 46, 71);
+}

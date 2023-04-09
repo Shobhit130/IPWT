@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Select an Artist:</h2>
+    <select name = "artist" onchange="fun(this.value)">
+        <option value="">--Select an artist--</option>
+        <option value="Bob Dylan">Bob Dylan</option>
+        <option value="Bonnie Tyler">Bonnie Tyler</option>
+        <option value="Dolly Parton">Dolly Parton</option>
+        <option value="Gary Moore">Gary Moore</option>
+    </select>
+    <p id = "res"></p>
+    <script>
+        function fun(str){
+            if(str == ""){
+                document.getElementById("res").innerHTML = "";
+                return;
+            }else{
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function(){
+                    if(this.readyState == 4 && this.status == 200){
+                        document.getElementById("res").innerHTML = this.responseText;
+                    }
+                };
+                xhttp.open("GET","getArtist.php?q="+str,true);
+                xhttp.send();
+            }
+        }
+    </script>
+</body>
+</html>
